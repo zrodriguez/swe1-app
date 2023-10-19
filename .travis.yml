@@ -7,6 +7,7 @@ python:
 # command to install dependencies
 install:
   - pip install -r requirements.txt
+  - mkdir ./tools
   - curl -L https://coveralls.io/coveralls-linux.tar.gz | tar -xz -C ./tools
 
 before_script:
