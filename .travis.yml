@@ -16,7 +16,6 @@ before_script:
 
 # command to run tests
 script:
-  # - pytest
   - black --check .
   - flake8 --max-line-length=88
   - coverage run --source=mysite,polls manage.py test
