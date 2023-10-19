@@ -1,17 +1,21 @@
 language: python
 python:
   - "3.11"
+
 # command to install dependencies
 install:
   - pip install -r requirements.txt
-  - pip install black
-  - pip install flake8
-  - pip install coveralls
-  - pip install coverage
+
+before_script:
+  - python manage.py migrate
+  - python manage.py collectstatic --noinput
+
 # command to run tests
 script:
   - pytest
-  - black . --check
+  - black --check .
   - flake8 --max-line-length=88
-  - coverage run --source=polls manage.py test
-  - coverage xml
+  - coverage run --source=mysite,polls manage.py test
+
+after_script:
+  - coveralls
