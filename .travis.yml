@@ -1,4 +1,5 @@
 language: python
+os: linux
 dist: jammy
 python:
   - "3.10"
@@ -13,10 +14,11 @@ before_script:
 
 # command to run tests
 script:
-  - pytest
+  # - pytest
   - black --check .
   - flake8 --max-line-length=88
   - coverage run --source=mysite,polls manage.py test
+  # - coverage xml
 
 after_script:
   - coveralls
