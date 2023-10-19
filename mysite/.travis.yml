@@ -4,6 +4,14 @@ python:
 # command to install dependencies
 install:
   - pip install -r requirements.txt
+  - pip install black
+  - pip install flake8
+  - pip install coveralls
+  - pip install coverage
 # command to run tests
 script:
   - pytest
+  - black . --check
+  - flake8 --max-line-length=88
+  - coverage run --source=polls manage.py test
+  - coverage xml
