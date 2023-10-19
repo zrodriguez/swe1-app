@@ -20,5 +20,5 @@ script:
   - coverage run --source=mysite,polls manage.py test
   # - coverage xml
 
-after_script:
-  - coveralls
+# after_script:
+#   - coveralls
