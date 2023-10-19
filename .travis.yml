@@ -21,7 +21,7 @@ script:
   - flake8 --max-line-length=88
   - coverage run --source=mysite,polls manage.py test
   - coverage xml
-  - ./tools/coveralls report --repo-token=rg8ZznwNq05g3HDfknodmueeRciuiiPDE ./coverage.xml
+  - ./tools/coveralls report --repo-token=uJmTL2D5SnMCefNFJDY27Ihtbwz1c2R9e ./coverage.xml
 
 # after_script:
 #   - coveralls
